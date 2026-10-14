@@ -1,0 +1,745 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #101010;
+    --white: #ffffff;
+    --gold: #e7bd35;
+    --light: #f8f8f6;
+    --gray: #777777;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeea;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1240px;
+    margin: auto;
+    min-height: 88px;
+    padding: 12px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo img {
+    width: 175px;
+    height: 62px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b58a00;
+}
+
+.nav-btn {
+    background: var(--black);
+    color: white;
+    padding: 14px 21px;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover,
+.btn-primary:hover {
+    background: #353535;
+    transform: translateY(-2px);
+}
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: 0;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    max-width: 1440px;
+    min-height: 650px;
+    margin: auto;
+    padding: 85px max(6%, calc((100% - 1160px) / 2)) 95px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 45%, #f5f0dc 0, transparent 35%),
+        #ffffff;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+}
+
+.gold-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 5.4vw, 76px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -4px;
+}
+
+.hero h1 span,
+.section h2 span,
+.placement h2 span,
+.contact h2 span {
+    color: #c69c13;
+}
+
+.hero-description {
+    max-width: 440px;
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--gray);
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.btn-primary {
+    background: var(--black);
+    color: white;
+    padding: 17px 21px;
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 12px;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.btn-primary span {
+    color: var(--gold);
+    font-size: 17px;
+}
+
+.btn-secondary {
+    padding: 16px 5px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 55px;
+}
+
+.note-line {
+    width: 35px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.hero-note p {
+    color: #777;
+    font-size: 11px;
+}
+
+/* OWNER IMAGE */
+.hero-visual {
+    position: relative;
+    min-height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.image-frame {
+    position: absolute;
+    width: 76%;
+    height: 83%;
+    right: 5%;
+    bottom: 0;
+    background: #e9dfbd;
+    border-radius: 180px 180px 5px 5px;
+}
+
+.owner-image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+    max-height: 480px;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.08));
+}
+
+.floating-card {
+    position: absolute;
+    z-index: 3;
+    bottom: 55px;
+    left: -10px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 17px 20px;
+    background: white;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.09);
+    border: 1px solid #f0eee6;
+    border-radius: 5px;
+}
+
+.card-icon {
+    font-size: 26px;
+    color: #c69c13;
+}
+
+.floating-card strong {
+    font-size: 12px;
+}
+
+.floating-card p {
+    margin-top: 5px;
+    font-size: 10px;
+    color: #777;
+}
+
+.vertical-label {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    writing-mode: vertical-rl;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #777;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 22px;
+    left: 6%;
+    right: 6%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #777;
+}
+
+/* INTRO STRIP */
+.intro-strip {
+    min-height: 76px;
+    padding: 20px 7%;
+    background: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.intro-strip p {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.intro-strip span {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.intro-strip b {
+    color: var(--gold);
+}
+
+/* GENERAL SECTIONS */
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 105px 35px;
+}
+
+.section-label {
+    color: #9a7a15;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+    margin-top: 38px;
+}
+
+.section h2,
+.contact h2 {
+    font-size: clamp(35px, 4vw, 52px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+}
+
+.about-text p,
+.section-heading p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 24px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* COURSES */
+.courses {
+    max-width: none;
+    background: var(--light);
+    padding-left: max(35px, calc((100% - 1130px) / 2));
+    padding-right: max(35px, calc((100% - 1130px) / 2));
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.section-heading p {
+    max-width: 330px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.course-card {
+    position: relative;
+    padding: 32px 27px;
+    min-height: 265px;
+    background: white;
+    border: 1px solid #eae9e4;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+}
+
+.course-card.featured {
+    border-top: 3px solid var(--gold);
+}
+
+.course-number {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: 11px;
+    color: #999;
+}
+
+.course-icon {
+    font-size: 30px;
+    color: #c69c13;
+    margin-bottom: 28px;
+}
+
+.course-card h3 {
+    font-size: 17px;
+    margin-bottom: 13px;
+}
+
+.course-card p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.course-card a {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.course-card a span {
+    color: #b58a00;
+}
+
+.small-note {
+    margin-top: 20px;
+    color: #888;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+/* PLACEMENT BANNER */
+.placement {
+    position: relative;
+    overflow: hidden;
+    background: #111111;
+    color: white;
+    padding: 90px max(7%, calc((100% - 1100px) / 2));
+}
+
+.placement-content {
+    position: relative;
+    z-index: 2;
+}
+
+.placement h2 {
+    margin-top: 28px;
+    font-size: clamp(38px, 5vw, 64px);
+    letter-spacing: -3px;
+    line-height: 1.15;
+}
+
+.placement-content > p {
+    max-width: 450px;
+    color: #c0c0c0;
+    font-size: 13px;
+    line-height: 1.9;
+    margin: 22px 0 28px;
+}
+
+.placement-mark {
+    position: absolute;
+    right: 6%;
+    bottom: -65px;
+    font-size: clamp(130px, 23vw, 300px);
+    font-weight: 800;
+    color: #202020;
+    letter-spacing: -20px;
+}
+
+.placement-mark span {
+    color: #c69c13;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+.contact .section-label {
+    margin-bottom: 28px;
+}
+
+.contact > p {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 16px 24px;
+    background: #f5f2e7;
+    border: 1px solid #e8dfc3;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* FOOTER */
+.footer {
+    padding: 32px 6%;
+    background: #0c0c0c;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    font-size: 21px;
+    font-weight: 800;
+    color: white;
+}
+
+.footer-brand span {
+    color: var(--gold);
+}
+
+.footer p,
+.footer > span {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+    .navbar {
+        padding: 10px 22px;
+        min-height: 75px;
+    }
+
+    .logo img {
+        width: 140px;
+        height: 52px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: white;
+        border-bottom: 1px solid #eee;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-btn {
+        margin-left: auto;
+        padding: 12px 14px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 0.85fr;
+        padding: 65px 28px 85px;
+        gap: 15px;
+        min-height: 560px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 6vw, 58px);
+        letter-spacing: -2.5px;
+    }
+
+    .hero-visual {
+        min-height: 380px;
+    }
+
+    .floating-card {
+        left: -20px;
+        padding: 12px;
+    }
+
+    .vertical-label {
+        display: none;
+    }
+
+    .about-grid {
+        gap: 35px;
+    }
+
+    .course-grid {
+        gap: 12px;
+    }
+
+    .course-card {
+        padding: 25px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        width: 112px;
+    }
+
+    .nav-btn {
+        font-size: 10px;
+        padding: 11px 12px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 55px 24px 80px;
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 12vw, 65px);
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-note {
+        margin-top: 32px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        min-height: 370px;
+        margin-top: 10px;
+    }
+
+    .owner-image {
+        max-height: 390px;
+        width: 90%;
+    }
+
+    .image-frame {
+        width: 78%;
+        height: 85%;
+        right: 8%;
+    }
+
+    .floating-card {
+        left: 0;
+        bottom: 30px;
+    }
+
+    .hero-bottom {
+        left: 24px;
+        right: 24px;
+        font-size: 8px;
+        gap: 15px;
+    }
+
+    .intro-strip {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        padding: 25px 24px;
+    }
+
+    .section {
+        padding: 70px 24px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 28px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card {
+        min-height: 235px;
+        padding: 28px;
+    }
+
+    .placement {
+        padding: 70px 24px;
+    }
+
+    .placement h2 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .placement-mark {
+        right: 10px;
+        bottom: -20px;
+        font-size: 130px;
+    }
+
+    .contact h2 {
+        font-size: 38px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 24px;
+    }
+}
